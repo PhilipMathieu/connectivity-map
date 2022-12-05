@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://unpkg.com/maplibre-gl@2.1.6/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@2.1.6/dist/maplibre-gl.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="before" class="map"></div>
+        <div id="after" class="map"></div>
+    </div>
+    <script src="https://unpkg.com/@maplibre/maplibre-gl-compare@0.5.0/dist/maplibre-gl-compare.js"></script>
+    <link href="https://unpkg.com/@maplibre/maplibre-gl-compare@0.5.0/dist/maplibre-gl-compare.css" rel="stylesheet" />
+    <script>
+        // 'Before' style from https://github.com/lukasmartinelli/naturalearthtiles
+        var before = new maplibregl.Map({
+            container: "before",
+            style: "https://raw.githubusercontent.com/lukasmartinelli/naturalearthtiles/gh-pages/maps/natural_earth.vector.json",
+            zoom: 2
+        });
+
+        // 'After' style from https://github.com/maplibre/demotiles
+        var after = new maplibregl.Map({
+            container: "after",
+            style: "https://demotiles.maplibre.org/style.json",
+            zoom: 2
+        });
+
+        // Use either of these patterns to select a container for the compare widget
+        var wrapperSelector = "#wrapper";
+        var wrapperElement = document.body.querySelectorAll("#wrapper")[0];
+
+        // available options
+        var options = {
+            mousemove: true,
+            orientation: "horizontal",
+        };
+
+        window.compare = new maplibregl.Compare(
+            before,
+            after,
+            wrapperSelector
+            // options
+        );
+    </script>
+</body>
+
+</html>
