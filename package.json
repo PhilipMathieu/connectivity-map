@@ -1,0 +1,26 @@
+{
+  "name": "connectivity-map",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "python -m http.server 5500",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass-dev": "sass --watch --update --style=expanded scss:css",
+    "sass-prod": "sass --no-source-map --style=compressed scss:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhilipMathieu/connectivity-map.git"
+  },
+  "author": "Philip Mathieu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PhilipMathieu/connectivity-map/issues"
+  },
+  "homepage": "https://github.com/PhilipMathieu/connectivity-map#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "sass": "^1.56.1"
+  }
+}
